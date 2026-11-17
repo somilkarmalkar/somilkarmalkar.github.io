@@ -12,9 +12,9 @@ Only dist/ is deployed. Never copy project documentation, private material, cred
 
 ## Hosting
 
-Intended repository: https://github.com/somilkarmalkar/somilkarmalkar.github.io, main branch. Intended host: GitHub Pages with the included workflow. Intended canonical domain: https://somilkarmalkar.tech. Confirm actual remote and Pages state before changing anything; the original creation session did not have the capability to create this repository or change Name.com DNS.
+Repository: https://github.com/somilkarmalkar/somilkarmalkar.github.io, main branch. Host: GitHub Pages with the included workflow and **Source: GitHub Actions**. Canonical domain: https://somilkarmalkar.tech. Source upload and hosting configuration were completed on 17 November 2026: the custom domain is saved in Pages, Name.com DNS points to GitHub Pages, and GitHub domain ownership is verified. The portfolio was verified over HTTPS with normal certificate validation on both hostnames, with https://www.somilkarmalkar.tech redirecting to the canonical apex URL. The certificate is provisioned and Enforce HTTPS is enabled in Pages settings. Confirm actual remote, Pages source, certificate, and live state before changing anything; do not restore legacy branch publishing.
 
-When the repository exists, use the connected GitHub tools or normal authenticated Git to publish authorized updates. A content update committed to main is meant to deploy through Actions. Check the workflow/deployment and live page; do not equate a local build with publication. Domain setup is documented in SETUP.md. Preserve unrelated DNS records.
+Use the connected GitHub tools or normal authenticated Git to publish authorized updates. A content update committed to main is meant to deploy through Actions. Check the workflow/deployment and live page; do not equate a local build with publication. Domain setup is documented in SETUP.md. Preserve unrelated DNS records and retain the GitHub domain verification TXT record.
 
 ## Requested design tools
 
