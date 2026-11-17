@@ -1,0 +1,1359 @@
+{
+  "profile": {
+    "name": "Somil Karmalkar",
+    "firstName": "Somil",
+    "email": "somil.karmalkar@uwaterloo.ca",
+    "github": "https://github.com/somilkarmalkar",
+    "domain": "somilkarmalkar.tech",
+    "location": "Waterloo, Ontario",
+    "university": "University of Waterloo",
+    "program": "Nanotechnology Engineering",
+    "year": "First year",
+    "availability": "Seeking co-op · Spring 2027",
+    "intro": "I'm a first-year Nanotechnology Engineering student at Waterloo. I like understanding how things work, then making something of my own. I'm looking for a Spring 2027 co-op.",
+    "about": "My interests sit somewhere between hardware and software: nanotechnology, semiconductors, and native apps. Right now, I'm learning the engineering fundamentals and building things I actually want to use.",
+    "personalIntro": "Big open worlds. Stories that stay with me. Games that test my patience. Here's what I reach for when the work is done."
+  },
+  "projects": [
+    {
+      "id": "somodoro",
+      "name": "Somodoro",
+      "category": "Native iOS app",
+      "status": "Personal project",
+      "summary": "A focus timer made for the way I study. Native on iPhone and iPad, with study logs, widgets, and data that stays on the device.",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "WidgetKit"
+      ],
+      "visual": "timer",
+      "details": [
+        "Custom study and break periods, with pause and resume across app launches.",
+        "Study history, session ratings, and statistics across day, week, month, and year.",
+        "Home Screen and Lock Screen widgets, with shared data when supported by the signing configuration.",
+        "On-device JSON storage and export. No account or server required."
+      ],
+      "note": "Personal native app project. Repository is private; happy to discuss the implementation."
+    },
+    {
+      "id": "teng",
+      "name": "Wind to electricity",
+      "category": "TENG design study",
+      "status": "In progress",
+      "summary": "A modular, 3D-printable wind collector for a triboelectric nanogenerator. Designing for air from any direction, printable parts, and a compatible shaft connection.",
+      "tags": [
+        "SolidWorks",
+        "3D printing",
+        "Engineering design"
+      ],
+      "visual": "rotor",
+      "details": [
+        "Designing the top fan assembly and its interface with the device's rod.",
+        "Exploring a cup-style rotor to collect wind from different horizontal directions.",
+        "Splitting the assembly into printable parts and considering fit and retention.",
+        "Current work is a design and fabrication study; performance has not yet been established."
+      ],
+      "note": "Current Waterloo design work. The preview is a concept illustration, not a dimensioned drawing or tested prototype."
+    },
+    {
+      "id": "sign",
+      "name": "Somil Sign Pro",
+      "category": "iOS interface experiment",
+      "status": "Modified open-source build",
+      "summary": "A Windows 95-inspired take on an iOS signing app. Reworking the interface while building on Feather's existing signing foundation.",
+      "tags": [
+        "Swift",
+        "iOS",
+        "Interface design"
+      ],
+      "visual": "retro",
+      "details": [
+        "A retro desktop visual direction applied to an on-device iOS signing application.",
+        "Based on Feather 2.8.2, retaining the upstream signing engine and app-management features.",
+        "Work includes adapting the interface and preparing build and packaging workflows.",
+        "Upstream GPL-3.0 licensing and dependency credits are preserved. Device runtime remains unverified."
+      ],
+      "note": "Modified Feather build, with credit to Feather and its dependencies. Private repository; not an official KravaSign product."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Swift",
+      "detail": "Native iOS and iPadOS development, SwiftUI interfaces, and app workflows."
+    },
+    {
+      "name": "Python",
+      "detail": "Programming, scripting, and working through technical problems."
+    },
+    {
+      "name": "Engineering tools",
+      "detail": "SolidWorks, 3D-print design, and an interest in semiconductors and hardware."
+    },
+    {
+      "name": "AI-assisted development",
+      "detail": "Efficient prompting, iteration, debugging, and checking the results with care."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Math & science tutor",
+      "organization": "Student tutoring",
+      "period": "Before Waterloo",
+      "description": "Tutored high-school students in mathematics, chemistry, and physics, breaking difficult ideas into steps they could work through."
+    },
+    {
+      "role": "Sergeant",
+      "organization": "Royal Canadian Air Cadets",
+      "period": "Leadership",
+      "description": "Developed discipline, teamwork, and leadership through the Air Cadet program."
+    },
+    {
+      "role": "Provincial qualifier",
+      "organization": "DECA",
+      "period": "Two-time qualifier · Medal recipient",
+      "description": "Practised presenting ideas, thinking under pressure, and solving business case problems."
+    },
+    {
+      "role": "Executive member",
+      "organization": "Model United Nations",
+      "period": "Leadership & volunteering",
+      "description": "Helped organize club activities, including a fundraising bake sale. Contributed to 400+ volunteer hours across my activities."
+    }
+  ],
+  "games": [
+    {
+      "id": "palworld",
+      "title": "Palworld",
+      "steam": 1623730,
+      "status": "rotation"
+    },
+    {
+      "id": "crimson-desert",
+      "title": "Crimson Desert Enhanced",
+      "steam": 3321460,
+      "status": "rotation"
+    },
+    {
+      "id": "zelda-totk",
+      "title": "The Legend of Zelda: Tears of the Kingdom remake",
+      "status": "rotation",
+      "art": "zelda-totk"
+    },
+    {
+      "id": "detroit",
+      "title": "Detroit: Become Human",
+      "steam": 1222140,
+      "status": "favourite"
+    },
+    {
+      "id": "cyberpunk",
+      "title": "Cyberpunk 2077",
+      "steam": 1091500,
+      "status": "liked"
+    },
+    {
+      "id": "baby-steps",
+      "title": "Baby Steps",
+      "steam": 1281040,
+      "status": "liked"
+    },
+    {
+      "id": "get-to-work",
+      "title": "Get To Work",
+      "steam": 2706170,
+      "status": "liked"
+    },
+    {
+      "id": "getting-over-it",
+      "title": "Getting Over It",
+      "steam": 240720,
+      "status": "liked"
+    },
+    {
+      "id": "difficult-game",
+      "title": "A Difficult Game About Climbing",
+      "steam": 2497920,
+      "status": "liked"
+    },
+    {
+      "id": "beamng",
+      "title": "BeamNG.drive",
+      "steam": 284160,
+      "status": "liked"
+    },
+    {
+      "id": "ghost",
+      "title": "Ghost of Tsushima",
+      "steam": 2215430,
+      "status": "liked"
+    },
+    {
+      "id": "gta-iv",
+      "title": "Grand Theft Auto IV",
+      "steam": 12210,
+      "status": "liked"
+    },
+    {
+      "id": "rdr2",
+      "title": "Red Dead Redemption 2",
+      "steam": 1174180,
+      "status": "liked"
+    },
+    {
+      "id": "gta-v",
+      "title": "Grand Theft Auto V",
+      "steam": 271590,
+      "status": "liked"
+    },
+    {
+      "id": "outer-wilds",
+      "title": "Outer Wilds",
+      "steam": 753640,
+      "status": "liked"
+    },
+    {
+      "id": "stanley",
+      "title": "The Stanley Parable: Ultra Deluxe",
+      "steam": 1703340,
+      "status": "liked"
+    },
+    {
+      "id": "subnautica",
+      "title": "Subnautica",
+      "steam": 264710,
+      "status": "liked"
+    },
+    {
+      "id": "repo",
+      "title": "R.E.P.O.",
+      "steam": 3241660,
+      "status": "liked"
+    },
+    {
+      "id": "silksong",
+      "title": "Hollow Knight: Silksong",
+      "steam": 1030300,
+      "status": "liked"
+    },
+    {
+      "id": "hollow-knight",
+      "title": "Hollow Knight",
+      "steam": 367520,
+      "status": "liked"
+    },
+    {
+      "id": "no-mans-sky",
+      "title": "No Man's Sky",
+      "steam": 275850,
+      "status": "liked"
+    },
+    {
+      "id": "high-on-life",
+      "title": "High on Life",
+      "steam": 1583230,
+      "status": "liked"
+    },
+    {
+      "id": "roblox",
+      "title": "Roblox",
+      "art": "roblox",
+      "status": "liked"
+    },
+    {
+      "id": "valorant",
+      "title": "VALORANT",
+      "art": "valorant",
+      "status": "liked"
+    }
+  ],
+  "anime": [
+    {
+      "title": "Frieren: Beyond Journey's End",
+      "status": "pending",
+      "progress": "Season 1 complete · Season 2 pending",
+      "mal": 52991,
+      "image": "assets/watch/anime-0.webp"
+    },
+    {
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 5114,
+      "image": "assets/watch/anime-1.webp"
+    },
+    {
+      "title": "Attack on Titan",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 16498,
+      "image": "assets/watch/anime-2.webp"
+    },
+    {
+      "title": "Chainsaw Man",
+      "status": "caught-up",
+      "progress": "Caught up on the anime",
+      "mal": 44511,
+      "image": "assets/watch/anime-3.webp"
+    },
+    {
+      "title": "Vinland Saga",
+      "status": "caught-up",
+      "progress": "Caught up on the anime",
+      "mal": 37521,
+      "image": "assets/watch/anime-4.webp"
+    },
+    {
+      "title": "Mob Psycho 100",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 32182,
+      "image": "assets/watch/anime-5.webp"
+    },
+    {
+      "title": "Takopi's Original Sin",
+      "status": "complete",
+      "progress": "Complete",
+      "query": "Takopi no Genzai",
+      "image": "assets/watch/anime-6.webp"
+    },
+    {
+      "title": "One Piece",
+      "status": "watching",
+      "progress": "Skypiea arc",
+      "mal": 21,
+      "image": "assets/watch/anime-7.webp"
+    },
+    {
+      "title": "Cyberpunk: Edgerunners",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 42310,
+      "image": "assets/watch/anime-8.webp"
+    },
+    {
+      "title": "Death Note",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 1535,
+      "image": "assets/watch/anime-9.webp"
+    },
+    {
+      "title": "Jujutsu Kaisen",
+      "status": "pending",
+      "progress": "Caught up except the latest season",
+      "mal": 40748,
+      "image": "assets/watch/anime-10.webp"
+    },
+    {
+      "title": "One-Punch Man",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 30276,
+      "image": "assets/watch/anime-11.webp"
+    },
+    {
+      "title": "Demon Slayer",
+      "status": "complete",
+      "progress": "Complete",
+      "mal": 38000,
+      "image": "assets/watch/anime-12.webp"
+    },
+    {
+      "title": "DAN DA DAN",
+      "status": "caught-up",
+      "progress": "Caught up on the anime",
+      "mal": 57334,
+      "image": "assets/watch/anime-13.webp"
+    }
+  ],
+  "shows": [
+    {
+      "title": "Dexter",
+      "status": "complete",
+      "progress": "Complete",
+      "image": "assets/watch/tv-0.webp"
+    },
+    {
+      "title": "Dexter: New Blood",
+      "status": "complete",
+      "progress": "Complete",
+      "image": "assets/watch/tv-1.webp"
+    },
+    {
+      "title": "Dexter: Resurrection",
+      "status": "watching",
+      "progress": "Ongoing · Currently watching",
+      "image": "assets/watch/tv-2.webp"
+    },
+    {
+      "title": "House M.D.",
+      "status": "watching",
+      "progress": "Season 5",
+      "image": "assets/watch/tv-3.webp"
+    },
+    {
+      "title": "Breaking Bad",
+      "status": "complete",
+      "progress": "Complete",
+      "image": "assets/watch/tv-4.webp"
+    },
+    {
+      "title": "Better Call Saul",
+      "status": "complete",
+      "progress": "Complete",
+      "image": "assets/watch/tv-5.webp"
+    },
+    {
+      "title": "Suits",
+      "status": "watching",
+      "progress": "Season 8",
+      "image": "assets/watch/tv-6.webp"
+    }
+  ],
+  "artists": [
+    {
+      "name": "Kanye West",
+      "rank": "01",
+      "url": "https://music.apple.com/artist/kanye-west/2715720"
+    },
+    {
+      "name": "Drake",
+      "rank": "02",
+      "url": "https://music.apple.com/artist/drake/271256"
+    }
+  ],
+  "updated": "2026-11-17",
+  "activity": {
+    "asOf": "2026-11-17",
+    "from": "2026-05-17",
+    "source": "https://github.com/users/somilkarmalkar/contributions?from=2026-05-17&to=2026-11-17",
+    "days": [
+      {
+        "date": "2026-05-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-31",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-29",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-31",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-29",
+        "level": 4,
+        "count": 2
+      },
+      {
+        "date": "2026-10-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-29",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-29",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-29",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-31",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-14",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-21",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-28",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-02",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-09",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-16",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-23",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-05-30",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-06",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-13",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-20",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-06-27",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-18",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-07-25",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-01",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-08",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-15",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-22",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-08-29",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-05",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-12",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-19",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-09-26",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-10",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-17",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-24",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-10-31",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-07",
+        "level": 0,
+        "count": 0
+      },
+      {
+        "date": "2026-11-14",
+        "level": 0,
+        "count": 0
+      }
+    ],
+    "total": 2
+  }
+}

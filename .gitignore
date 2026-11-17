@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.cache/
+.qa/
+.impeccable/
+.taste-skill/
+.env*
+!.env.example

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="%%DESCRIPTION%%">
+  <meta property="og:title" content="%%TITLE%%">
+  <meta property="og:description" content="%%DESCRIPTION%%">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://somilkarmalkar.tech/assets/social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="%%CANONICAL%%">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <title>%%TITLE%%</title>
+  <script>try{const r=document.documentElement,t=localStorage.getItem('somil-display-v2');if(['dark','dim','light'].includes(t))r.dataset.theme=t;r.dataset.motion=localStorage.getItem('somil-motion')==='paused'||matchMedia('(prefers-reduced-motion: reduce)').matches?'paused':'on';if(sessionStorage.getItem('somil-skip-enter')==='1'){r.dataset.enter='skip';sessionStorage.removeItem('somil-skip-enter')}}catch{}</script>
+</head>
+<body data-page="%%PAGE%%">
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="ambient" aria-hidden="true"></canvas>
+  <button class="round-toggle menu-toggle" aria-label="Open navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button>
+  <div class="display-toggles" aria-label="Display settings">
+    <button class="round-toggle" id="theme-toggle" aria-label="Switch to dim theme" title="Switch theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13.6A8.4 8.4 0 0 1 10.4 4a8.5 8.5 0 1 0 9.6 9.6Z" fill="currentColor" stroke="none"/><path d="M18.5 3v4M16.5 5h4"/></svg></button>
+    <button class="round-toggle" id="texture-toggle" aria-label="Toggle pixel background" aria-pressed="true" title="Pixel background"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor" stroke="none"><circle cx="6" cy="6" r="1"/><circle cx="10" cy="6" r="1"/><circle cx="14" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="10" r="1"/><circle cx="10" cy="10" r="1"/><circle cx="14" cy="10" r="1"/><circle cx="18" cy="10" r="1"/><circle cx="6" cy="14" r="1"/><circle cx="10" cy="14" r="1"/><circle cx="14" cy="14" r="1"/><circle cx="18" cy="14" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="10" cy="18" r="1"/><circle cx="14" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></g></svg></button>
+    <button class="round-toggle" id="motion-toggle" aria-label="Pause motion" aria-pressed="true" title="Pause motion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h8m-3-3 3 3-3 3M8 16h11m-3-3 3 3-3 3M3 12h4M4 20h5"/></svg></button>
+    <button class="round-toggle copy-email" aria-label="Copy email address" title="Copy email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="m4 7 8 6 8-6"/></svg></button>
+    <button class="round-toggle display-more" aria-label="Show display settings" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h5m6 0h5M4 16h10m4 0h2"/><circle cx="12" cy="9" r="3"/><circle cx="16" cy="16" r="2"/></svg></button>
+  </div>
+  <div class="music-dock"><button class="deck-toggle" aria-label="Open favourite artists" aria-expanded="false" title="Favourite artists"><svg viewBox="0 0 84 64" aria-hidden="true"><rect x="1.5" y="1.5" width="81" height="61" rx="8"/><circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="18" class="record-groove"/><circle cx="32" cy="32" r="11" fill="currentColor" opacity=".3"/><circle cx="32" cy="32" r="2" fill="currentColor"/><path d="m70 14-5 28-5 5"/><circle cx="70" cy="11" r="4"/></svg></button><div class="deck-panel" hidden><p>always in rotation</p><a href="https://music.apple.com/artist/kanye-west/2715720" target="_blank" rel="noopener noreferrer"><span>01</span> Kanye West <span>↗</span></a><a href="https://music.apple.com/artist/drake/271256" target="_blank" rel="noopener noreferrer"><span>02</span> Drake <span>↗</span></a><a class="deck-all" href="music.html">my music shelf →</a></div></div>
+  <div class="shell">
+    <nav class="side-nav" aria-label="Main navigation">%%NAV%%</nav>
+    <div class="page-column">
+      <main class="page" id="main" tabindex="-1"></main>
+      <footer class="site-footer"><span>© <span id="year">2026</span> Somil Karmalkar</span><span aria-hidden="true"> · </span><a href="mailto:somil.karmalkar@uwaterloo.ca">email</a><span aria-hidden="true"> · </span><a href="#main">back to top</a><span class="art-credit">Collection artwork © its respective owners.</span></footer>
+    </div>
+  </div>
+  <div class="object-stage"><canvas id="desk-object" role="button" tabindex="0" aria-label="Floating crystal: drag to turn, or press Enter to spin"></canvas><span>drag to turn · click to spin</span></div>
+  <dialog id="nav-dialog" aria-labelledby="nav-title"><button class="round-toggle menu-close" aria-label="Close navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><h2 id="nav-title">somil karmalkar</h2><nav aria-label="Mobile navigation">%%NAV%%</nav></dialog>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><button class="round-toggle dialog-close" aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript"><h1>Somil Karmalkar</h1><p>First-year Nanotechnology Engineering at Waterloo. Seeking Spring 2027 co-op.</p><a href="mailto:somil.karmalkar@uwaterloo.ca">somil.karmalkar@uwaterloo.ca</a> · <a href="https://github.com/somilkarmalkar">GitHub</a></div></noscript>
+  <script id="site-content" type="application/json">%%DATA%%</script>
+  <script src="app.js" defer></script>
+</body>
+</html>
