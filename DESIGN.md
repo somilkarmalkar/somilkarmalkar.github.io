@@ -8,11 +8,13 @@ Dark default background #08090b, foreground #ece9e2, secondary text #b6b5b1 and 
 
 Desktop shell: 6vw side padding, a 120px sticky left navigation rail, a 48px column gap, and a 740px content column. Content starts at 88px. At 900px and below, navigation becomes a full-screen mobile menu; content starts at 84px with 16px side margins. Phone page headings are 41.6px; the full personal name scales down enough to fit beside the corner music control.
 
-Home: lowercase name and social links, four dash-led introduction lines, gold program tag, grey bracketed co-op date, plain project descriptions and monospace metadata, real public GitHub activity, compact experience timeline, tools/skills, and email contact. No large project preview cards or oversized editorial hero.
+Home: lowercase name and social links, four dash-led introduction lines, linked gold program tag with the official Waterloo shield, grey bracketed co-op date, plain project descriptions and monospace metadata, compact experience timeline, tools/skills, and email contact. The contribution graph is removed at Somil's request. No large project preview cards or oversized editorial hero.
 
 Personal pages: favourites coverflow with category tabs, side covers, previous/next controls, counter and caption; four-column media shelves with thin wooden ledges on desktop and two columns on phones; separate games, watchlist, and music routes. Titles and watch statuses are the user's, not the reference person's.
 
-Four fixed circular display/contact controls sit at the top right. A small turntable-shaped artists control opens links to Kanye West and Drake. No audio autoplays and no fake playback is shown. Desktop has a draggable/spinnable pixel crystal and a blue pointillist background. Motion and pixels can be paused independently, reduced-motion preferences are respected, and the theme cycles through dark, dim, and light.
+Four fixed circular display/contact controls sit at the top right. The empty turntable control is removed; artist links remain on the music page. No audio autoplays and no fake playback is shown. A shared blue dithered canvas renders both the background and section-specific 3D objects, using the same pixel grid and palette so object edges dissolve into the field. Objects scale with the open space beside the content and grow substantially on 2560×1440 displays. Motion and pixels can be paused independently, reduced-motion preferences are respected, and the theme cycles through dark, dim, and light.
+
+Waterloo, DECA, and Air Cadet League marks link to their official sites. Model UN uses a generic linked globe, avoiding an invented chapter affiliation or UN endorsement. Logo sources and credits are in ASSETS-logos.json. Game and anime artwork is rendered in a 32×48 limited-palette pixel-painting style, with nearest-neighbour scaling across shelves, favourites, thumbnails, and detail dialogs. Original local artwork remains the fallback; television artwork retains its existing treatment.
 
 ## Content and behavior
 

@@ -28,3 +28,11 @@ Development design instructions and Playwright MCP configuration remain included
 - A local 75-frame cursor-sweep sample had median and 95th-percentile requestAnimationFrame intervals of approximately 16.7ms. This is an observed local sample, not a universal device-performance claim.
 - No JavaScript page errors were observed.
 - Native cross-document transitions are progressive enhancement; other browsers keep normal navigation and the lightweight intro animation. Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@view-transition
+# 17 November 2026: shared pixel scene and linked marks
+
+- Built the six pages and passed the existing content checks. Compared content/site.json with the previous production commit: only the contribution/activity data was removed; project facts, watch progress, games, and artist ordering are unchanged.
+- Checked all six routes at 320, 390, 768, 820, 1024, 1440, and 2560px widths (42 route/viewport checks): no horizontal overflow, broken loaded images, contribution graph, or turntable dock.
+- Visually reviewed the blue shared-canvas field, enlarged atom/controller at 2560×1440, and the game shelf at 390px. Game/anime images report natural dimensions 32×48 with pixelated rendering, including newly inserted search results, favourites tabs, and game details. TV artwork remains unchanged.
+- Exercised game search and rotation filters, details dialogs, favourites anime/TV tabs, watchlist anime/TV search, mobile navigation, theme cycling, pixel off/on, keyboard rotation, and home project/experience object switching. Pause produced identical scene-region screenshots across observations. Browser-back navigation retained functioning canvas controls.
+- The new renderer respects reduced-motion, hidden-page, and touch-pan preferences in code. System reduced-motion emulation and physical-device testing were not available in this browser session; no such checks are claimed for this revision.
+- No runtime errors were recorded in the preview. The mechanical design scan reported no findings, with stylesheet-resolution limits for the unbuilt HTML template; actual built pages were checked in the browser.

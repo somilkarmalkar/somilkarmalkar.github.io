@@ -1,0 +1,18 @@
+/* Context marks keep their official colours and link to the named organization. */
+.program-tag{display:inline-flex;align-items:center;gap:5px;vertical-align:baseline;text-decoration:none;white-space:normal}
+.program-tag .organization-logo{display:inline-block;width:18px;height:20px;object-fit:contain;vertical-align:middle;flex:none}
+.program-tag .external{font-size:.75em;margin-left:1px}
+.org-mark.org-logo-link{display:inline-flex;align-items:center;justify-content:center;border:0;background:none;border-radius:0;text-decoration:none;min-width:30px;min-height:32px}
+.organization-logo{display:block;width:29px;height:30px;object-fit:contain}
+.org-logo-link.deca-mark img{width:28px;height:28px}
+.org-logo-link.air-cadets-mark img{width:18px;height:18px;image-rendering:pixelated}
+.org-mark.mun-mark .icon{width:25px;height:25px}
+.pixel-art{image-rendering:crisp-edges;image-rendering:pixelated}
+.shelf-cover img.pixel-art,.flow-card img.pixel-art,.watch-thumb img.pixel-art,.media-detail>img.pixel-art{border-radius:2px}
+@media(max-width:600px){
+  .program-tag .organization-logo{width:15px;height:18px}
+  .organization-logo{width:24px;height:26px}
+  .org-mark.org-logo-link{min-width:25px;min-height:28px}
+  .org-logo-link.deca-mark img{width:24px;height:24px}
+}
+@media print{.program-tag .organization-logo{width:14px;height:16px}}

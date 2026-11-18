@@ -1,0 +1,37 @@
+[
+  {
+    "file": "logos/waterloo.svg",
+    "source": "https://uwaterloo.ca/profiles/uw_base_profile/themes/uw_fdsu_theme_resp/icon.svg",
+    "sourcePage": "https://uwaterloo.ca/",
+    "destination": "https://uwaterloo.ca/future-students/programs/nanotechnology-engineering",
+    "credit": "Official University of Waterloo shield app icon. University of Waterloo trademark; used unmodified to identify the student's university and link to its program. Preserve proportions and colours."
+  },
+  {
+    "file": "logos/deca-mark.png",
+    "source": "https://cdn.prod.website-files.com/635c3c9aaccd75594c3f6c08/635c6e38c8f1b2d56095ab8b_61776c30289b1b4463fdd987_6042f8364a28b9cf964cd205_deca-small.png",
+    "sourcePage": "https://www.deca.org/brand",
+    "destination": "https://www.deca.org/",
+    "credit": "Official DECA 32px app icon, white diamond on DECA blue. DECA Inc. trademark; used unmodified for identification alongside the student's participation."
+  },
+  {
+    "file": "logos/deca.svg",
+    "source": "https://cdn.prod.website-files.com/635c3c9aaccd75594c3f6c08/635c674998d20b2eb73e00e1_deca-logo.svg",
+    "sourcePage": "https://www.deca.org/brand",
+    "destination": "https://www.deca.org/",
+    "credit": "Official DECA white horizontal logo, retained as an alternative to the compact diamond icon. DECA Inc. trademark; preserve the complete logo and proportions if used."
+  },
+  {
+    "file": "logos/air-cadets.ico",
+    "source": "https://aircadetleague.com/wp-content/uploads/2021/06/favicon.ico",
+    "sourcePage": "https://aircadetleague.com/",
+    "destination": "https://aircadetleague.com/",
+    "credit": "Official Air Cadet League of Canada site icon. Air Cadet League trademark; original icon retained. This is the programme's national supporting body crest, not a Royal Canadian Air Cadets uniform badge."
+  },
+  {
+    "file": "logos/air-cadets.png",
+    "source": "https://aircadetleague.com/wp-content/uploads/2021/06/favicon.ico",
+    "sourcePage": "https://aircadetleague.com/",
+    "destination": "https://aircadetleague.com/",
+    "credit": "Lossless format conversion of the official site's 16px Air Cadet League crest from ICO to PNG. Native pixels, colours, and proportions unchanged. Air Cadet League of Canada trademark. Use alt text identifying the League crest."
+  }
+]

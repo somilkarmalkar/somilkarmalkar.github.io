@@ -4,28 +4,33 @@ const page = document.body.dataset.page;
 const main = document.getElementById('main');
 const esc = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const gameArt = g => `assets/games/${g.id}.webp`;
-const image = (src,alt,extra='') => `<img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async" ${extra}>`;
+const image = (src,alt,extra='') => `<img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async" ${/^assets\/(games\/|watch\/anime-)/.test(src)?'class="pixel-art" data-pixel-art':''} ${extra}>`;
 const icon = (name,cls='') => `<svg class="icon ${cls}" viewBox="0 0 24 24" aria-hidden="true">${({github:'<path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-1.5-.5-2 3.5-.4 7-1.7 7-6a4.6 4.6 0 0 0-1.3-3.2A4.3 4.3 0 0 0 20 3s-1.3-.4-4 1.5a13.8 13.8 0 0 0-8 0C5.3 2.6 4 3 4 3a4.3 4.3 0 0 0-.2 3.8A4.6 4.6 0 0 0 2.5 10c0 4.3 3.5 5.6 7 6-.5.5-.5 1.3-.5 2v4"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',document:'<path d="M6 2h8l4 4v16H6Z"/><path d="M14 2v5h4M9 12h6M9 16h6"/>',app:'<rect x="4" y="2" width="16" height="20" rx="3"/><path d="M9 5h6M10 19h4"/>',rotor:'<circle cx="12" cy="12" r="3"/><path d="M12 9c-8-9 7-10 6-3l-3 5m-1 4c-3 12-12 1-6-2m2-3C-2 7 7-2 10 6"/>',folder:'<path d="M3 6h7l2 3h9v12H3Z"/><path d="M3 9h18"/>',arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>',left:'<path d="m14 5-7 7 7 7"/>',right:'<path d="m10 5 7 7-7 7"/>',school:'<path d="m2 9 10-6 10 6-10 6ZM6 12v6c4 3 8 3 12 0v-6M22 9v8"/>',briefcase:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 13h18M10 13v3h4v-3"/>'})[name]||''}</svg>`;
 const arrow = '<span class="external" aria-hidden="true">↗</span>';
 const statusNames={rotation:'in rotation',favourite:'all-time favourite',liked:'on my shelf',complete:'complete',watching:'watching',pending:'next up','caught-up':'caught up'};
 const header=(title,description)=>`<section class="page-intro"><h1>${esc(title)}</h1><p class="page-description">${esc(description)}</p></section>`;
 const projectIcons={somodoro:'app',teng:'rotor',sign:'folder'};
+
+const organizations={
+  'Royal Canadian Air Cadets':{url:'https://aircadetleague.com/',file:'air-cadets.png',alt:'Air Cadet League of Canada crest',className:'air-cadets-mark'},
+  'DECA':{url:'https://www.deca.org/',file:'deca-mark.png',alt:'DECA diamond',className:'deca-mark'},
+  'Model United Nations':{url:'https://www.un.org/en/mun',className:'mun-mark'}
+};
+const organizationImage=(file,alt='')=>`<img class="organization-logo" src="assets/logos/${file}" alt="${esc(alt)}" width="32" height="32" decoding="async">`;
+const organizationMark=e=>{const org=organizations[e.organization];if(!org)return `<span class="org-mark">${icon('school')}</span>`;return `<a class="org-mark org-logo-link ${org.className}" href="${org.url}" target="_blank" rel="noopener noreferrer" aria-label="${esc(e.organization)} website" title="${esc(e.organization==='Model United Nations'?'About Model United Nations':e.organization)}">${org.file?organizationImage(org.file,org.alt):'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18ZM5 7h14M5 17h14"/></svg>'}</a>`;};
+const organizationName=e=>{const org=organizations[e.organization];return org?`<a href="${org.url}" target="_blank" rel="noopener noreferrer">${esc(e.organization)}${arrow}</a>`:`<span>${esc(e.organization)}</span>`;};
+
 const socialLinks=()=>`<div class="social-links"><a href="resume.html">${icon('document')} résumé${arrow}</a><a href="${data.profile.github}" target="_blank" rel="noopener noreferrer">${icon('github')} github${arrow}</a><a href="mailto:${data.profile.email}">${icon('mail')} email</a></div>`;
 const gameCard=g=>`<button class="shelf-item" data-game="${g.id}"><span class="shelf-cover">${image(gameArt(g),g.title)}</span><span class="shelf-title">${esc(g.title)}</span><span class="shelf-meta">${statusNames[g.status]}</span></button>`;
 
 function renderWork(){
-  main.innerHTML=`<section class="intro" id="me"><div class="name-row"><h1 class="name">${data.profile.name.toLowerCase().split('').map(c=>`<span${c===' '?' class="name-space"':''}>${c===' '?'&nbsp;':esc(c)}</span>`).join('')}</h1>${socialLinks()}</div><ul class="intro-list"><li><span class="program-tag">[nano @ uwaterloo]</span> first year</li><li>looking for <span class="date-tag">[spring 2027]</span> co-op opportunities</li><li>interested in semiconductors, hardware, and the software that makes things work</li><li>i build native apps with Swift, work with Python, and like figuring things out</li></ul></section>
-  <section id="projects"><h2>Things I'm working on.</h2><div class="project-list">${data.projects.map(p=>`<article class="project"><h3>${icon(projectIcons[p.id]||'folder')}<button class="inline-link" data-project="${p.id}">${esc(p.name)}${arrow}</button>${p.status==='In progress'?'<span class="project-badge">IN PROGRESS</span>':''}</h3><p>${esc(p.summary)}</p><div class="metadata">${esc(p.status)} · ${p.tags.map(esc).join(' · ')} <button class="inline-link" data-project="${p.id}">notes${arrow}</button></div></article>`).join('')}</div>${renderActivity()}</section>
-  <section id="experience"><h2>Where I've been.</h2><div class="timeline"><article class="timeline-row"><span class="timeline-period">first year</span><span class="org-mark university-mark">UW</span><div><h3>Nanotechnology Engineering at <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer">University of Waterloo${arrow}</a></h3><p>Learning the engineering fundamentals. Interested in semiconductors and chip design.</p></div></article><h3 class="minor-heading">EXPERIENCE & LEADERSHIP</h3>${data.experience.map((e,i)=>`<article class="timeline-row"><span class="timeline-period">${esc(e.period)}</span><span class="org-mark">${icon(i===0?'school':'briefcase')}</span><div><h3>${esc(e.role)} at <span>${esc(e.organization)}</span></h3><p>${esc(e.description)}</p></div></article>`).join('')}</div><div class="tools"><h3 class="minor-heading">TOOLS & SKILLS</h3>${data.skills.map(s=>`<p><strong>${esc(s.name)}</strong> · ${esc(s.detail)}</p>`).join('')}</div></section>
+  main.innerHTML=`<section class="intro" id="me"><div class="name-row"><h1 class="name">${data.profile.name.toLowerCase().split('').map(c=>`<span${c===' '?' class="name-space"':''}>${c===' '?'&nbsp;':esc(c)}</span>`).join('')}</h1>${socialLinks()}</div><ul class="intro-list"><li><a class="program-tag" href="https://uwaterloo.ca/future-students/programs/nanotechnology-engineering" target="_blank" rel="noopener noreferrer">[nano @ uwaterloo ${organizationImage('waterloo.svg')}]${arrow}</a> first year</li><li>looking for <span class="date-tag">[spring 2027]</span> co-op opportunities</li><li>interested in semiconductors, hardware, and the software that makes things work</li><li>i build native apps with Swift, work with Python, and like figuring things out</li></ul></section>
+  <section id="projects"><h2>Things I'm working on.</h2><div class="project-list">${data.projects.map(p=>`<article class="project"><h3>${icon(projectIcons[p.id]||'folder')}<button class="inline-link" data-project="${p.id}">${esc(p.name)}${arrow}</button>${p.status==='In progress'?'<span class="project-badge">IN PROGRESS</span>':''}</h3><p>${esc(p.summary)}</p><div class="metadata">${esc(p.status)} · ${p.tags.map(esc).join(' · ')} <button class="inline-link" data-project="${p.id}">notes${arrow}</button></div></article>`).join('')}</div></section>
+  <section id="experience"><h2>Where I've been.</h2><div class="timeline"><article class="timeline-row"><span class="timeline-period">first year</span><a class="org-mark org-logo-link waterloo-mark" href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" aria-label="University of Waterloo website">${organizationImage('waterloo.svg','University of Waterloo shield')}</a><div><h3>Nanotechnology Engineering at <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer">University of Waterloo${arrow}</a></h3><p>Learning the engineering fundamentals. Interested in semiconductors and chip design.</p></div></article><h3 class="minor-heading">EXPERIENCE & LEADERSHIP</h3>${data.experience.map((e,i)=>`<article class="timeline-row"><span class="timeline-period">${esc(e.period)}</span>${organizationMark(e)}<div><h3>${esc(e.role)} at ${organizationName(e)}</h3><p>${esc(e.description)}</p></div></article>`).join('')}</div><div class="tools"><h3 class="minor-heading">TOOLS & SKILLS</h3>${data.skills.map(s=>`<p><strong>${esc(s.name)}</strong> · ${esc(s.detail)}</p>`).join('')}</div></section>
   <section class="contact" id="contact"><h2>Say hi.</h2><p><a class="email-address" href="mailto:${data.profile.email}">${data.profile.email}</a><button class="copy-label copy-email">COPY</button></p><p class="contact-note">Looking for a Spring 2027 co-op. Happy to talk about what I'm building.</p></section>`;
   const name=main.querySelector('.name');
   name.addEventListener('pointermove',e=>{if(!canAnimate())return;const r=name.getBoundingClientRect();const x=e.clientX-r.left;name.querySelectorAll('span').forEach(s=>{const p=s.offsetLeft+s.offsetWidth/2;s.style.transform=`translateY(${-Math.max(0,1-Math.abs(p-x)/65)*3}px)`;});});
   name.addEventListener('pointerleave',()=>name.querySelectorAll('span').forEach(s=>s.style.transform=''));
-}
-
-function renderActivity(){
-  const activity=data.activity;if(!activity?.days?.length)return `<p class="activity-link metadata"><a href="${data.profile.github}">Public GitHub activity${arrow}</a></p>`;
-  return `<div class="activity"><a class="metadata inline-link" href="${data.profile.github}" target="_blank" rel="noopener noreferrer">Public GitHub activity${arrow}</a><div class="activity-months metadata"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span></div><div class="contribution-grid" role="img" aria-label="${activity.total} public GitHub contributions between May and November 2026">${activity.days.map(d=>`<span class="contribution level-${d.level}" title="${esc(d.date)}: ${d.count} public contribution${d.count===1?'':'s'}"></span>`).join('')}</div><p class="activity-note metadata">public activity · snapshot ${esc(activity.asOf)}</p></div>`;
 }
 
 function renderPersonal(){
@@ -105,9 +110,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 document.querySelectorAll('.copy-email').forEach(b=>b.addEventListener('click',copyEmail));
 const navDialog=document.getElementById('nav-dialog');document.querySelector('.menu-toggle').addEventListener('click',()=>navDialog.showModal());document.querySelector('.menu-close').addEventListener('click',()=>navDialog.close());navDialog.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navDialog.close()));
 document.querySelector('.display-more').addEventListener('click',e=>{const b=e.currentTarget;const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',open);document.querySelector('.display-toggles').classList.toggle('expanded',open);});
-const deckButton=document.querySelector('.deck-toggle'),deckPanel=document.querySelector('.deck-panel');deckButton.addEventListener('click',()=>{const open=deckPanel.hidden;deckPanel.hidden=!open;deckButton.setAttribute('aria-expanded',open);});document.addEventListener('click',e=>{if(!e.target.closest('.music-dock')){deckPanel.hidden=true;deckButton.setAttribute('aria-expanded','false');}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){deckPanel.hidden=true;deckButton.setAttribute('aria-expanded','false');}});
 document.querySelectorAll('a[href^="#"],a[href^="./#"]').forEach(a=>a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href.startsWith('./#')&&page!=='work')return;const target=document.getElementById(href.split('#')[1]);if(target){e.preventDefault();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}}));
-initScene();
 initInteractionPolish();
 
 function canAnimate(){return document.documentElement.dataset.motion!=='paused'&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
@@ -131,84 +134,4 @@ function initInteractionPolish(){
   document.addEventListener('click',e=>{const link=e.target.closest('a[href]');if(!link||link.target||link.href.startsWith('mailto:'))return;const url=new URL(link.href,location.href);if(url.origin===location.origin&&url.pathname!==location.pathname){try{sessionStorage.setItem('somil-skip-enter',e.detail===0?'1':'0');}catch{}}});
   for(const type of ['pageswap','pagereveal'])window.addEventListener(type,e=>{if(!canAnimate()||document.documentElement.dataset.enter==='skip'||document.documentElement.dataset.input==='keyboard')e.viewTransition?.skipTransition();});
   window.addEventListener('pagehide',()=>cancelAnimationFrame(paint),{once:true});
-}
-
-function initScene(){
-  const ambient=document.getElementById('ambient'),object=document.getElementById('desk-object');const bg=ambient.getContext('2d'),ctx=object.getContext('2d');if(!bg||!ctx)return;
-  const low=document.createElement('canvas');low.width=80;low.height=100;const lc=low.getContext('2d');const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let texture=true,motion=true,angle=.4,tilt=.15,spin=0,dragging=false,lastX=0,lastY=0,dragDistance=0,w=0,h=0,frame=0,previous=0,lastBg=-Infinity,sceneTime=0,objectVisible=true,contentRight=0,cells=[];
-  const pointer={x:0,y:0,tx:0,ty:0,vx:0,vy:0,energy:0,target:0,lastMoved:-Infinity,ready:false};
-  let trail=[],ripples=[];
-  try{texture=localStorage.getItem('somil-pixels')!=='off';motion=localStorage.getItem('somil-motion')!=='paused';}catch{}
-  const themeButton=document.getElementById('theme-toggle'),textureButton=document.getElementById('texture-toggle'),motionButton=document.getElementById('motion-toggle');
-  const active=()=>motion&&!reduced.matches;
-  const refresh=()=>{const theme=document.documentElement.dataset.theme;const next={dark:'dim',dim:'light',light:'dark'}[theme]||'dark';document.documentElement.dataset.motion=active()?'on':'paused';themeButton.setAttribute('aria-label','Switch to '+next+' theme');themeButton.title='theme: '+theme+' · switch to '+next;textureButton.setAttribute('aria-pressed',texture);motionButton.setAttribute('aria-pressed',active());motionButton.setAttribute('aria-label',active()?'Pause motion':'Resume motion');motionButton.disabled=reduced.matches;motionButton.title=reduced.matches?'Reduced motion is enabled in system settings':active()?'Pause motion':'Resume motion';document.querySelector('meta[name="theme-color"]').content=theme==='light'?'#f0ede6':theme==='dim'?'#17191d':'#08090b';document.dispatchEvent(new Event('motionchange'));};
-  const clearEffects=()=>{pointer.energy=0;pointer.target=0;pointer.vx=0;pointer.vy=0;pointer.ready=false;pointer.lastMoved=-Infinity;trail=[];ripples=[];};
-  const background=(time,now)=>{
-    bg.clearRect(0,0,w,h);if(!texture)return;
-    const light=document.documentElement.dataset.theme==='light',cell=w<600?7:8;
-    const cx=w*(w<600?.93:.89),cy=h*(.72+Math.sin(time*.000045)*.05),radius=Math.max(w*.49,h*.68),reach=Math.min(220,w*.43),reach2=reach*reach;
-    const moving=active()&&pointer.energy>.002;
-    for(const c of cells){
-      const dx=(c.x-cx)/radius,dy=(c.y-cy)/(radius*.95),base=Math.max(0,1-dx*dx-dy*dy)**2;
-      let hover=0,wake=0,wave=0,shiftX=0,shiftY=0;
-      if(moving){const px=c.x-pointer.x,py=c.y-pointer.y,d2=px*px+py*py;if(d2<reach2){const d=Math.sqrt(d2),influence=(1-d/reach)**2*pointer.energy;hover=influence;const force=influence*13/(d||1);shiftX+=px*force;shiftY+=py*force;}}
-      for(const t of trail){const px=c.x-t.x,py=c.y-t.y;if(Math.abs(px)>105||Math.abs(py)>105)continue;const d2=px*px+py*py;if(d2<11025)wake=Math.max(wake,(1-d2/11025)**2*t.life*.5);}
-      for(const r of ripples){const px=c.x-r.x,py=c.y-r.y;if(Math.abs(px)>r.radius+24||Math.abs(py)>r.radius+24)continue;const d=Math.hypot(px,py),ring=Math.max(0,1-Math.abs(d-r.radius)/18)*r.life*r.life;wave=Math.max(wave,ring);if(ring){const force=ring*8/(d||1);shiftX+=px*force;shiftY+=py*force;}}
-      const energy=Math.min(1,hover*.9+wake+wave*.8);
-      if(c.noise>base*.86+energy*.78+.045)continue;
-      const quiet=c.x<contentRight+16?.45:1,phone=w<600?.2+.8*Math.pow(c.x/w,1.5):1;
-      bg.globalAlpha=(light?Math.max(base*.13+.02,energy*.22):Math.max(base*.55+.04,energy*.62*quiet))*phone;
-      bg.fillStyle=energy>.25?c.bright:c.color;
-      const size=cell-2+hover*.8;
-      bg.fillRect(Math.round(c.x+1+shiftX),Math.round(c.y+1+shiftY),size,size);
-    }
-    bg.globalAlpha=1;
-  };
-  const vertices=[[0,-1.45,0],[.8,0,0],[0,0,.6],[-.8,0,0],[0,0,-.6],[0,1.45,0]],faces=[[0,1,2],[0,2,3],[0,3,4],[0,4,1],[5,2,1],[5,3,2],[5,4,3],[5,1,4]],colors=['#d0f6bb','#69c981','#36795d','#2e7158','#a5e5ad','#61bb88','#2e6b56','#468c69'];
-  const drawObject=time=>{if(!objectVisible)return;lc.clearRect(0,0,80,100);const a=angle+time*.00014,bob=Math.sin(time*.001)*2;const points=vertices.map(([x,y,z])=>{let xx=x*Math.cos(a)+z*Math.sin(a),zz=-x*Math.sin(a)+z*Math.cos(a);let yy=y*Math.cos(tilt)-zz*Math.sin(tilt);zz=y*Math.sin(tilt)+zz*Math.cos(tilt);const p=3.8/(3.8+zz);return {x:40+xx*28*p,y:50+yy*28*p+bob,z:zz};});const sorted=faces.map((f,i)=>({f,i,z:f.reduce((s,j)=>s+points[j].z,0)/3})).sort((a,b)=>b.z-a.z);for(const {f,i}of sorted){lc.beginPath();f.forEach((j,n)=>{const p=points[j];if(!n)lc.moveTo(p.x,p.y);else lc.lineTo(p.x,p.y);});lc.closePath();lc.fillStyle=colors[i];lc.fill();lc.strokeStyle=colors[i];lc.lineWidth=.5;lc.stroke();}ctx.clearRect(0,0,object.width,object.height);const pixels=lc.getImageData(0,0,80,100).data,scale=object.width/80;for(let y=0;y<100;y++)for(let x=0;x<80;x++){const i=(y*80+x)*4;if(pixels[i+3]<100)continue;ctx.fillStyle=`rgb(${pixels[i]} ${pixels[i+1]} ${pixels[i+2]})`;ctx.fillRect(x*scale,y*scale,Math.max(1,scale-(texture?1:0)),Math.max(1,scale-(texture?1:0)));}};
-  const render=now=>{
-    frame=0;
-    const live=active()&&!document.hidden,elapsed=Math.max(0,now-previous),dt=Math.min(elapsed/1000,1/30);
-    const responding=live&&(now-pointer.lastMoved<950||ripples.length||Math.abs(pointer.target-pointer.energy)>.004);
-    if(elapsed>=(responding?16:32)||!live){
-      if(live){
-        sceneTime+=Math.min(elapsed,60);
-        if(pointer.ready){pointer.vx+=(pointer.tx-pointer.x)*100*dt;pointer.vy+=(pointer.ty-pointer.y)*100*dt;pointer.vx*=Math.exp(-10*dt);pointer.vy*=Math.exp(-10*dt);pointer.x+=pointer.vx*dt;pointer.y+=pointer.vy*dt;}
-        pointer.energy+=(pointer.target-pointer.energy)*(1-Math.exp(-12*dt));
-        trail=trail.filter(t=>now-t.born<650);for(const t of trail)t.life=1-(now-t.born)/650;
-        ripples=ripples.filter(r=>now-r.born<900);for(const r of ripples){const progress=(now-r.born)/900;r.radius=16+progress*230;r.life=1-progress;}
-        if(spin){angle+=spin;spin*=.94;if(spin<.001)spin=0;}
-      }
-      drawObject(sceneTime);
-      if(now-lastBg>(responding?15:120)||!live){background(sceneTime,now);lastBg=now;}
-      previous=now;
-    }
-    if(live&&(texture||objectVisible))frame=requestAnimationFrame(render);
-  };
-  const restart=()=>{cancelAnimationFrame(frame);lastBg=-Infinity;previous=performance.now()-33;render(performance.now());};
-  const wake=()=>{if(!frame&&active()&&!document.hidden)frame=requestAnimationFrame(render);};
-  const resize=()=>{
-    w=innerWidth;h=innerHeight;ambient.width=w;ambient.height=h;object.width=320;object.height=400;contentRight=main.getBoundingClientRect().right;objectVisible=getComputedStyle(object.parentElement).display!=='none';
-    cells=[];const cell=w<600?7:8;
-    for(let y=0;y<h;y+=cell)for(let x=0;x<w;x+=cell){let seed=(((x+1)*73856093)^((y+1)*19349663))>>>0;seed=Math.imul(seed^(seed>>>16),2246822507)>>>0;const noise=(seed%997)/997;cells.push({x,y,noise,color:noise>.7?'#5383d7':noise>.4?'#234c9d':'#183672',bright:noise>.7?'#528ce0':'#3264be'});}
-    clearEffects();restart();
-  };
-  const follow=e=>{
-    if(!active()||!texture||document.hidden)return;
-    const now=performance.now();if(!pointer.ready){pointer.x=e.clientX;pointer.y=e.clientY;pointer.tx=e.clientX;pointer.ty=e.clientY;pointer.ready=true;}
-    const distance=Math.hypot(e.clientX-pointer.tx,e.clientY-pointer.ty);pointer.tx=e.clientX;pointer.ty=e.clientY;pointer.target=1;pointer.lastMoved=now;
-    const last=trail[trail.length-1];if(distance>3&&(!last||now-last.born>28)){trail.push({x:e.clientX,y:e.clientY,born:now,life:1});if(trail.length>10)trail.shift();}
-    wake();
-  };
-  const leave=()=>{pointer.target=0;pointer.lastMoved=performance.now();wake();};
-  window.addEventListener('pointermove',follow,{passive:true});
-  window.addEventListener('pointerdown',e=>{follow(e);if(active()&&texture){ripples.push({x:e.clientX,y:e.clientY,born:performance.now(),radius:16,life:1});if(ripples.length>3)ripples.shift();wake();}},{passive:true});
-  window.addEventListener('pointerup',e=>{if(e.pointerType==='touch')leave();},{passive:true});window.addEventListener('pointercancel',leave,{passive:true});window.addEventListener('pointerout',e=>{if(!e.relatedTarget)leave();},{passive:true});window.addEventListener('blur',leave);
-  themeButton.addEventListener('click',()=>{const next={dark:'dim',dim:'light',light:'dark'}[document.documentElement.dataset.theme]||'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('somil-display-v2',next);}catch{}refresh();restart();});
-  textureButton.addEventListener('click',()=>{texture=!texture;clearEffects();try{localStorage.setItem('somil-pixels',texture?'on':'off');}catch{}refresh();restart();});
-  motionButton.addEventListener('click',()=>{motion=!motion;clearEffects();try{localStorage.setItem('somil-motion',motion?'on':'paused');}catch{}refresh();restart();});
-  const turn=()=>{if(active())spin=.2;else angle+=Math.PI/2;restart();};
-  object.addEventListener('pointerdown',e=>{dragging=true;dragDistance=0;lastX=e.clientX;lastY=e.clientY;object.setPointerCapture(e.pointerId);});object.addEventListener('pointermove',e=>{if(!dragging)return;dragDistance+=Math.abs(e.clientX-lastX);angle+=(e.clientX-lastX)*.015;tilt=Math.max(-.6,Math.min(.6,tilt+(e.clientY-lastY)*.008));lastX=e.clientX;lastY=e.clientY;restart();});object.addEventListener('pointerup',()=>{dragging=false;if(dragDistance<5)turn();});object.addEventListener('pointercancel',()=>dragging=false);object.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();turn();}if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();angle+=e.key==='ArrowLeft'?-.2:.2;restart();}});
-  reduced.addEventListener('change',()=>{clearEffects();refresh();restart();});document.addEventListener('visibilitychange',()=>{clearEffects();restart();});window.addEventListener('resize',resize);window.addEventListener('pagehide',()=>cancelAnimationFrame(frame),{once:true});refresh();resize();
 }
