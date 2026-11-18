@@ -12,4 +12,6 @@ for(const s of [...data.anime,...data.shows]) {
   if(s.image) await access(new URL('../public/'+s.image,import.meta.url));
 }
 for(const page of ['index.html','personal.html','games.html','watchlist.html','music.html','resume.html']) await access(new URL('../dist/'+page,import.meta.url));
+for(const model of ['gameboy','controller','headphones','laptop','computer','books','television']) await access(new URL('../public/assets/models/'+model+'.glb',import.meta.url));
+for(const asset of ['model-renderer.js','vendor/three.module.min.js','vendor/GLTFLoader.js','vendor/BufferGeometryUtils.js','vendor/RoomEnvironment.js','vendor/LICENSE-three.txt','assets/models/credits.html']) await access(new URL('../public/'+asset,import.meta.url));
 console.log(`Content checked: ${data.projects.length} projects, ${data.games.length} games, ${data.anime.length} anime, ${data.shows.length} shows.`);

@@ -28,4 +28,4 @@ Repository: https://github.com/somilkarmalkar/somilkarmalkar.github.io. Source w
 
 AGENTS.md, PRODUCT.md, and DESIGN.md preserve the facts, constraints, and visual decisions. Read the current repository before using older source packages or Somil-Portfolio-Context.md.
 
-See SETUP.md for GitHub Pages and Name.com; TOOLING.md for the requested design skills and Playwright MCP. Artwork sources are recorded in ASSETS.json; organization marks and their official destinations are recorded in ASSETS-logos.json.
+See SETUP.md for GitHub Pages and Name.com; TOOLING.md for the requested design skills and Playwright MCP. Artwork sources are recorded in ASSETS.json; organization marks and their official destinations are recorded in ASSETS-logos.json. Existing 3D model sources and licences are in ASSETS-models.json, with visible model credits linked in the footer. The pinned, locally hosted Three.js runtime is documented in THIRD-PARTY-3D.md; no package installation step is required.

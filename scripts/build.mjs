@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile, cp, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 await rm(dist, { recursive: true, force: true });
@@ -9,7 +10,14 @@ await cp(path.join(root, 'public'), dist, { recursive: true });
 const data = JSON.parse(await readFile(path.join(root, 'content/site.json'), 'utf8'));
 const serialized = JSON.stringify(data).replace(/</g, '\\u003c');
 const safe = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const template = await readFile(path.join(root, 'src/layout.html'), 'utf8');
+let template = await readFile(path.join(root, 'src/layout.html'), 'utf8');
+const modelVersion = createHash('sha256').update(await readFile(path.join(dist,'model-renderer.js'))).digest('hex').slice(0,12);
+const sceneSource = await readFile(path.join(dist,'scene.js'),'utf8');
+await writeFile(path.join(dist,'scene.js'),sceneSource.replace("'./model-renderer.js'","'./model-renderer.js?v="+modelVersion+"'"));
+for (const asset of ['styles.css','refinements.css','scene.css','app.js','pixel-art.js','scene.js']) {
+  const version = createHash('sha256').update(await readFile(path.join(dist,asset))).digest('hex').slice(0,12);
+  template = template.replaceAll('"'+asset+'"','"'+asset+'?v='+version+'"');
+}
 const nav = `<a href="./" data-nav="work">me</a><div class="nav-sub"><a href="./#projects">projects</a><a href="./#experience">experience</a></div><a href="personal.html" data-nav="personal">favourites</a><a href="games.html" data-nav="games">games</a><a href="watchlist.html" data-nav="watchlist">watchlist</a><a href="music.html" data-nav="music">music</a><a href="resume.html" data-nav="resume">résumé</a>`;
 for (const [file, page, title, description] of [
   ['index.html', 'work', 'Somil Karmalkar — Engineering & things I make', 'First-year Nanotechnology Engineering at Waterloo. Swift, Python, native apps, and engineering design. Seeking Spring 2027 co-op.'],
@@ -25,4 +33,4 @@ for (const [file, page, title, description] of [
 }
 await writeFile(path.join(dist, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://somilkarmalkar.tech/sitemap.xml\n');
 await writeFile(path.join(dist, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['','personal.html','games.html','watchlist.html','music.html','resume.html'].map(p=>`<url><loc>https://somilkarmalkar.tech/${p}</loc></url>`).join('')+'</urlset>');
-console.log('Built 6 pages in dist/. No runtime dependencies.');
+console.log('Built 6 pages in dist/. All runtime assets are local.');
